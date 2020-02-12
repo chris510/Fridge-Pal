@@ -10,7 +10,9 @@
             class="form-control"
             name="name"
             ngModel
+            required
           >
+          <span>Please enter a valid ingredient!</span>
         </div>
         <div class="col-sm-2 form-group">
           <label for="amount">Amount</label>
@@ -20,12 +22,24 @@
             name="amount"
             class="form-control"
             ngModel
+            required
+            pattern="^[1-9]+[0-9]*$"
           >
+          <span>Please enter a valid amount!</span>
         </div>
       </div>
       <div class="row">
         <div class="col-xs-12">
-          <button class="btn btn-success" type="submit">Add</button>
+          <button 
+            class="btn btn-success" 
+            type="submit" 
+            [disabled]="!f.valid" 
+            *ngIf="!editMode">Add</button>
+          <button 
+            class="btn btn-success" 
+            type="submit" 
+            *ngIf="editMode"
+            >Update</button>
           <button class="btn btn-danger" type="submit">Delete</button>
           <button class="btn btn-primary" type="submit">Clear</button>
         </div>
