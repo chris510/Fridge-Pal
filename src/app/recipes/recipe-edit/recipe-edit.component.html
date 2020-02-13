@@ -7,8 +7,13 @@
             type="submit" 
             class="btn btn-success"
             [disabled]="!recipeForm.valid"
+            routerLink="/recipes"
             >Save</button>
-          <button type="submit" class="btn btn-danger">Cancel</button>
+          <button 
+            type="button" 
+            class="btn btn-danger"
+            routerLink="/recipes"
+            >Cancel</button>
         </div>
       </div>
       <div class="row">

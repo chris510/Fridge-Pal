@@ -8,6 +8,7 @@ import { RecipeService } from 'src/app/services/recipe.service';
   templateUrl: './recipe-details.component.html',
   styleUrls: ['./recipe-details.component.scss']
 })
+
 export class RecipeDetailsComponent implements OnInit {
   recipe: Recipe;
   id: number;
@@ -30,6 +31,10 @@ export class RecipeDetailsComponent implements OnInit {
   onEditRecipe() {
     this.router.navigate(['edit'], {relativeTo: this.route})
     // this.router.navigate(['../', this.id, 'edit'], {relativeTo: this.route})
+  }
+
+  onDeleteRecipe() {
+    this.recipeService.deleteRecipe(this.id);
   }
 
 }
