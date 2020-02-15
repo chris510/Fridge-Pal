@@ -25,6 +25,7 @@ export class RecipeEditComponent implements OnInit {
       (params: Params) => {
         this.id = +params['id'];
         this.editMode = params['id'] != null ? true : false;
+        console.log(this.editMode);
         this.initForm();
       }
     )
@@ -37,6 +38,9 @@ export class RecipeEditComponent implements OnInit {
     //   this.recipeForm.value['description'],
     //   this.recipeForm.value['ingredients']
     // );
+    console.log(this.editMode);
+    console.log(this.id);
+    console.log(this.recipeForm.value);
     if (this.editMode) {
       this.recipeService.updateRecipe(this.id, this.recipeForm.value);
     } else {
