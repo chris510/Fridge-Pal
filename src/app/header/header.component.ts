@@ -18,7 +18,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   constructor(
     private dataStorageService: DataStorageService,
-    private recipeService: RecipeService,
     private authService: AuthService
     ) { }
 
