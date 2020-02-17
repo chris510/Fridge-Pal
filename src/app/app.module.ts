@@ -26,6 +26,6 @@ import { HeaderComponent } from './header/header.component';
     SharedModule,
     CoreModule
   ],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

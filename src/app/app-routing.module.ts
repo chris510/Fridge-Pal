@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes} from '@angular/router'
+import { RouterModule, Routes, PreloadAllModules} from '@angular/router'
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/recipes', pathMatch: 'full'},
@@ -10,11 +10,15 @@ const appRoutes: Routes = [
   { 
     path: 'shopping-list',
     loadChildren: () => import('./shopping-list/shopping-list.module').then(m => m.ShoppingListModule)
-  }
+  },
 ]
 
 @NgModule({
-  imports: [RouterModule.forRoot(appRoutes)],
+  imports: [RouterModule.forRoot(appRoutes, 
+    {
+      preloadingStrategy: PreloadAllModules
+    }
+  )],
   exports: [RouterModule]
 })
 
