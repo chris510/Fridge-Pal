@@ -77,11 +77,13 @@ export class AuthComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    if (this.closeAlertSub) this.closeAlertSub.unsubscribe();
+    // if (this.closeAlertSub) this.closeAlertSub.unsubscribe();
 
-    if (this.closeAlertSub) {
-      this.closeAlertSub.unsubscribe();
-    }
+    this.closeAlertSub ? this.closeAlertSub.unsubscribe : null;
+
+    // if (this.closeAlertSub) {
+    //   this.closeAlertSub.unsubscribe();
+    // }
   }
 
   private showErrorAlert(message: string) {
