@@ -21,7 +21,6 @@ export class AuthComponent implements OnInit, OnDestroy {
   isLoginMode = false;
   isLoading = false;
   error: string = '';
-  private signUpSubscription: Subscription;
   private closeAlertSub: Subscription;
   @ViewChild(PlaceHolderDirective, {static: false}) alertHost: PlaceHolderDirective;
 
@@ -37,7 +36,6 @@ export class AuthComponent implements OnInit, OnDestroy {
 
   onSwitchMode() {
     this.isLoginMode = !this.isLoginMode;
-    console.log(this.isLoginMode);
   }
 
   onSubmit(form: NgForm){
