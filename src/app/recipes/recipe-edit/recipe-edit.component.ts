@@ -38,9 +38,6 @@ export class RecipeEditComponent implements OnInit {
     //   this.recipeForm.value['description'],
     //   this.recipeForm.value['ingredients']
     // );
-    console.log(this.editMode);
-    console.log(this.id);
-    console.log(this.recipeForm.value);
     if (this.editMode) {
       this.recipeService.updateRecipe(this.id, this.recipeForm.value);
     } else {
@@ -53,7 +50,7 @@ export class RecipeEditComponent implements OnInit {
     this.router.navigate(['../'], {relativeTo: this.route})
   }
 
-  get controls() { 
+  get ingredientsControls() { 
     return (<FormArray>this.recipeForm.get('ingredients')).controls;
   }
 
